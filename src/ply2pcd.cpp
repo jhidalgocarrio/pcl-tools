@@ -26,16 +26,16 @@ main (int argc, char** argv)
     }
   }
 
-  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
+  pcl::PointCloud<pcl::PointXYZRGBA>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZRGBA>);
 
   pcl::PLYReader reader;
-  reader.read<pcl::PointXYZ> (argv[1], *cloud);
+  reader.read<pcl::PointXYZRGBA> (argv[1], *cloud);
 
   std::cerr << "Read cloud: " << std::endl;
   std::cerr << *cloud << std::endl;
 
   pcl::PCDWriter pcdwriter;
-  pcdwriter.write<pcl::PointXYZ> (argv[2], *cloud, binary);
+  pcdwriter.write<pcl::PointXYZRGBA> (argv[2], *cloud, binary);
 
   return (0);
 }
