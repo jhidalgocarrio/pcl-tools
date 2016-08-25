@@ -9,3 +9,4 @@ ply2pcd
 normal_estimation_omp
 pcd_viewer
 PCDViewer.app/
+./build/
